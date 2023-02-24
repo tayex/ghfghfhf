@@ -384,10 +384,16 @@ do
 	pages.__index = pages
 	sections.__index = sections
     --
+    
+    
+       local title_string = "HeadShot - Private | User Status : "..CheckStatus(game.Players.LocalPlayer.Name).." | %A, %B"
+        local day = os.date(" %d", os.time())
+        local second_string = ", %Y."
+        title_string = os.date(title_string, os.time())..day..GetSubPrefix(day)..os.date(second_string, os.time())
     function library:New(info)
 		local info = info or {}
-        local name = info.name or info.Name or "devine"
-        local title = info.title or info.Title or "devine"
+        local name = info.name or info.Name or "title_string"
+        local title = info.title or info.Title or "title_string"
         local size = info.size or info.Size or Vector2.new(504,604)
         local accent = info.accent or info.Accent or info.color or info.Color or theme.accent
         --
